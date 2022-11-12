@@ -6,6 +6,11 @@
     azure_rm_resourcegroup:
       name: myResourceGroup
       location: eastus
+  - name: Create storage account
+    azure_rm_storageaccount:
+      resource_group: myResourceGroup
+      name: myansiblelab0011
+      account_type: Standard_LRS
   - name: Create virtual network
     azure_rm_virtualnetwork:
       resource_group: myResourceGroup
@@ -50,9 +55,9 @@
       resource_group: myResourceGroup
       name: myVM
       vm_size: Standard_DS1_v2
-      storage_account: myansiblelab
-      storage_container: myansiblelab1
-      storage_blob: myansiblelab1.vhd
+      storage_account: myansiblelab0011
+      storage_container: myvm
+      storage_blob: myvm.vhd
       admin_username: azureuser
       admin_password: Km82dx40
       ssh_password_enabled: false
