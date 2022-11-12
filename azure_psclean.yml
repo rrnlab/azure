@@ -1,10 +1,8 @@
----
-- hosts: localhost
+- name: Delete myrg
+  hosts: localhost
+  connection: local
   tasks:
-    - name: Deleting resource group - "{{ name }}"
-      azure_rm_resourcegroup:
-        name: "{{ name }}"
-        state: absent
-      register: myResourceGroup
-    - debug:
-        var: myResourceGroup
+  - name: Delete resource group
+    azure_rm_resourcegroup:
+      name: myResourceGroup
+      stae: absent
