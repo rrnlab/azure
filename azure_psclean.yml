@@ -1,8 +1,4 @@
-- name: Delete myrg
-  hosts: localhost
-  connection: local
-  tasks:
-  - name: Delete resource group
-    azure_rm_resourcegroup:
-      name: myResourceGroup
-      state: absent
+- name: Run basic PowerShell script
+  ansible.windows.win_powershell:
+    script: |
+      Get-AzResourceGroup -Name "myResourceGroup" | Remove-AzResourceGroup -Force
