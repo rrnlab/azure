@@ -1,9 +1,10 @@
-- name: Remove RG
-  ansible.windows.win_powershell:
-    script: |
-      Remove-AzResourceGroup -Name myResourceGroup
+---
+-  name: Remove RG
+   ansible.windows.win_powershell:
+     script: |
+       Remove-AzResourceGroup -Name myResourceGroup
       
-- name: validation
-  ansible.windows.win_powershell:
-    script: |
-      Get-AzResourceGroup -Name myResourceGroup
+-  name: validation
+   ansible.windows.win_powershell:
+     script: |
+       Get-AzResourceGroup -Name myResourceGroup
