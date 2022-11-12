@@ -5,4 +5,4 @@
   - name: Delete resource group
     azure_rm_resourcegroup:
       name: myResourceGroup
-      stae: absent
+      state: absent
