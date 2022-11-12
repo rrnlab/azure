@@ -1,4 +1,10 @@
-- name: Remove RG
-  win_shell:
-    script: |
-      Remove-AzResourceGroup -Name myResourceGroup
+---
+- hosts: localhost
+  tasks:
+    - name: Deleting resource group - "{{ name }}"
+      azure_rm_resourcegroup:
+        name: "{{ name }}"
+        state: absent
+      register: myResourceGroup
+    - debug:
+        var: myResourceGroup
