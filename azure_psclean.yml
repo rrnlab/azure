@@ -1,4 +1,4 @@
 - name: Run basic PowerShell script
-  ansible.windows.win_powershell:
+  ansible.windows.win_shell:
     script: |
       Get-AzResourceGroup -Name "myResourceGroup" | Remove-AzResourceGroup -Force
